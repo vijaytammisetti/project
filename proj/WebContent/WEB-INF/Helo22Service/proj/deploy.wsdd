@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Use this file to deploy some handlers/chains and services      --><!-- Two ways to do this:                                           --><!--   java org.apache.axis.client.AdminClient deploy.wsdd          --><!--      after the axis server is running                          --><!-- or                                                             --><!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   --><!--      from the same directory that the Axis engine runs         --><deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from Helo22Service WSDL service -->
+
+  <service name="Helo22" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://proj"/>
+      <parameter name="wsdlServiceElement" value="Helo22Service"/>
+      <parameter name="schemaQualified" value="http://proj"/>
+      <parameter name="wsdlServicePort" value="Helo22"/>
+      <parameter name="className" value="proj.Helo22"/>
+      <parameter name="wsdlPortType" value="Helo22"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation xmlns:operNS="http://proj" xmlns:retNS="http://proj" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="example" qname="operNS:example" returnQName="retNS:exampleReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://proj" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:name" type="tns:string"/>
+      </operation>
+      <parameter name="allowedMethods" value="example"/>
+
+  </service>
+</deployment>
