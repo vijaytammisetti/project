@@ -1,0 +1,10 @@
+create table mrf(domain varchar2(30) not null, trainers varchar2(30) not null, experience number(3) not null, duration varchar2(10) not null);
+create table trainerslist(t_id number(8) primary key,t_name varchar2(30) not null,contact number(10) not null,email varchar2(30) not null, domain varchar2(30) not null,
+experience number(3) not null,location varchar2(30) not null);
+insert into trainerslist values('&t_id','&t_name','&contact','&email','&domain',
+'&experience','&location');
+select * from trainerslist;
+desc trainerslist;
+desc mrf;
+insert into mrf values('java','2',3,'4 months');
+select * from mrf;
